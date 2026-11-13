@@ -33,13 +33,15 @@ class ArticleFactory extends Factory
     }
 
     /**
-     * An unpublished article: no publication date yet.
+     * An unpublished article: no publication date yet, but we keep track
+     * of when it was drafted.
      */
     public function draft(): static
     {
         return $this->state(fn (array $attributes) => [
             'status' => 'draft',
             'published_at' => null,
+            'drafted_at' => fake()->dateTimeBetween('-2 weeks'),
         ]);
     }
 

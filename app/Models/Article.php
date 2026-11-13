@@ -21,6 +21,7 @@ class Article extends Model
         'summary',
         'body',
         'published_at',
+        'drafted_at',
         'permalink',
         'status',
         'author',
@@ -44,6 +45,7 @@ class Article extends Model
     {
         return [
             'published_at' => 'datetime',
+            'drafted_at' => 'datetime',
         ];
     }
 }
